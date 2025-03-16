@@ -17,6 +17,7 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Deploy on Vercel
+https://qantas-hotel-tawny.vercel.app/
 
 ## Things can be improved
 
