@@ -1,7 +1,7 @@
 import { HotelType } from "@/types/hotel";
-import Hotel from "./Hotel";
 import { HotelPageProps } from "./HotelPage";
 import styled from "@emotion/styled";
+import HotelCard from "./HotelCard";
 
 const Container = styled.div`
     display: flex;
@@ -16,7 +16,7 @@ type HotelListProps = HotelPageProps;
 export default function HotelList({ data }: HotelListProps) {
     return data.length > 0 ? <Container>
         {
-            data.map((item: HotelType) => <Hotel key={item.id} data={item} />)
+            data.map((item: HotelType) => <HotelCard key={item.id} data={item} />)
         }
     </Container> : null;
 }

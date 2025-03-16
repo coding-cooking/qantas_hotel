@@ -2,6 +2,7 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 import { HotelType } from "@/types/hotel";
+import HotelRate from "@/components/Rating";
 
 const Container = styled.div`
     display: flex;
@@ -139,7 +140,7 @@ type HotelProps = {
     data: HotelType;
 }
 
-export default function Hotel({ data }: HotelProps) {
+export default function HotelCard({ data }: HotelProps) {
     const cancellationType = data?.offer?.cancellationOption?.cancellationType;
 
     return <Container role="article">
@@ -151,7 +152,8 @@ export default function Hotel({ data }: HotelProps) {
             <HotelInfo>
                 <TitleAndRate>
                     <Title>{data?.property?.title}</Title>
-                    <div>hotel rate</div>
+                    <HotelRate ratingValue={data?.property?.rating?.ratingValue} type={data?.property?.rating?.ratingType} />
+
                 </TitleAndRate>
                 <Address>{data?.property?.address?.join(', ')}</Address>
             </HotelInfo>
